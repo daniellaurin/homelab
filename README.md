@@ -8,6 +8,24 @@ This guide outlines the setup and configuration of my personal home lab, which i
 - **Server Name:** dell-precision-3620
 - **IP Address:** 192.168.4.2
 
+## Home Lab Software Reference Table
+
+| Program | Description | Website/Repository |
+|---------|-------------|---------------------|
+| CasaOS | Open-source home cloud system | [https://casaos.io/](https://casaos.io/) |
+| Cockpit | Web-based server manager | [https://cockpit-project.org/](https://cockpit-project.org/) |
+| NextCloud | Self-hosted cloud storage | [https://nextcloud.com/](https://nextcloud.com/) |
+| Docker | Containerization platform | [https://www.docker.com/](https://www.docker.com/) |
+| Timeshift | System backup tool | [https://github.com/teejee2008/timeshift](https://github.com/teejee2008/timeshift) |
+| Netplan | Network configuration tool | [https://netplan.io/](https://netplan.io/) |
+| SSH | Secure Shell for remote access | [https://www.ssh.com/academy/ssh](https://www.ssh.com/academy/ssh) |
+| Fish Shell | User-friendly command line shell | [https://fishshell.com/](https://fishshell.com/) |
+| Tmux | Terminal multiplexer | [https://github.com/tmux/tmux](https://github.com/tmux/tmux) |
+| NVIDIA Drivers | Graphics drivers | [https://www.nvidia.com/en-us/drivers/unix/](https://www.nvidia.com/en-us/drivers/unix/) |
+| APT | Package management system | [https://wiki.debian.org/Apt](https://wiki.debian.org/Apt) |
+| UFW | Uncomplicated Firewall | [https://wiki.ubuntu.com/UncomplicatedFirewall](https://wiki.ubuntu.com/UncomplicatedFirewall) |
+| Vim | Text editor | [https://www.vim.org/](https://www.vim.org/) |
+
 ## Initial Setup
 
 ### 1. CasaOS Installation
