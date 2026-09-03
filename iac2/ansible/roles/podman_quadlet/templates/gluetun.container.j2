@@ -1,0 +1,34 @@
+[Unit]
+Description=Gluetun VPN Client (PIA OpenVPN - CA Ontario)
+
+[Container]
+Image=ghcr.io/qdm12/gluetun:latest
+ContainerName=gluetun
+AutoUpdate=registry
+
+PublishPort=8090:8090
+PublishPort=8888:8888
+
+Environment="VPN_SERVICE_PROVIDER=private internet access"
+Environment=VPN_TYPE=openvpn
+Environment=OPENVPN_USER={{ gluetun_openvpn_user }}
+Environment="OPENVPN_PASSWORD={{ gluetun_openvpn_password }}"
+
+Environment="SERVER_REGIONS=CA Ontario"
+Environment=PRIVATE_INTERNET_ACCESS_OPENVPN_ENCRYPTION_PRESET=normal
+
+Environment=HTTPPROXY=on
+Environment=VPN_PORT_FORWARDING=on
+
+Environment=FIREWALL_INPUT_PORTS=8090,8888
+Environment=FIREWALL_OUTBOUND_SUBNETS=10.0.30.0/24,10.88.0.0/16
+
+AddCapability=NET_ADMIN
+AddDevice=/dev/net/tun
+Volume=/opt/appdata/gluetun:/gluetun
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

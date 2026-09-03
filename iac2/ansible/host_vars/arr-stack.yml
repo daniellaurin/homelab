@@ -1,0 +1,10 @@
+quadlet_services:
+  - gluetun
+  - qbittorrent
+  - prowlarr
+  - sonarr
+  - radarr
+  - bazarr
+
+gluetun_openvpn_user: "{{ vault_pia_username }}"
+gluetun_openvpn_password: "{{ vault_pia_password }}"

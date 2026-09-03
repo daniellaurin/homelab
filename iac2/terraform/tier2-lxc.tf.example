@@ -1,0 +1,45 @@
+# LXC 208 — FileBrowser TEST
+resource "proxmox_download_file" "debian13_lxc" {
+  content_type = "vztmpl"
+  datastore_id = "local"
+  node_name    = "pve-node1"
+  url          = "http://download.proxmox.com/images/system/debian-13-standard_13.1-2_amd64.tar.zst"
+}
+
+resource "proxmox_virtual_environment_container" "lxc_208_filebrowser" {
+  node_name    = "pve-node1"
+  vm_id        = 208
+  unprivileged = false
+
+  operating_system {
+    template_file_id = proxmox_download_file.debian13_lxc.id
+    type             = "debian"
+  }
+
+  disk {
+    datastore_id = "Proxmox_NFS_Fast"
+    size         = 15
+  }
+
+  cpu    { cores = 2 }
+  memory { dedicated = 2048 }
+
+  network_interface {
+    name    = "eth0"
+    bridge  = "vmbr0"
+    vlan_id = 30
+  }
+
+  initialization {
+    hostname = "filebrowser"
+    ip_config {
+      ipv4 {
+        address = "10.0.30.50/24"
+        gateway = "10.0.30.1"
+      }
+    }
+    user_account {
+      keys = [trimspace(file(pathexpand(var.ssh_public_key)))]
+    }
+  }
+}

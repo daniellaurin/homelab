@@ -1,0 +1,13 @@
+---
+- name: Configure LXC tier (Podman not pre-baked — install first)
+  hosts: tier2_lxc
+  become: true
+  roles:
+    - podman_install
+    - podman_quadlet
+
+- name: Configure HA VM tier (Podman baked in by the Packer template)
+  hosts: tier1_ha_vms
+  become: true
+  roles:
+    - podman_quadlet

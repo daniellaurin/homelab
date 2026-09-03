@@ -1,0 +1,12 @@
+---
+- name: reload systemd
+  ansible.builtin.systemd:
+    daemon_reload: true
+  listen: reload and restart quadlets
+
+- name: restart quadlet services
+  ansible.builtin.systemd:
+    name: "{{ item }}.service"
+    state: restarted
+  loop: "{{ quadlet_services }}"
+  listen: reload and restart quadlets

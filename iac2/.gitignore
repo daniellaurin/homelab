@@ -1,0 +1,17 @@
+# Terraform local state and variable overrides
+*.tfstate
+*.tfstate.backup
+*.tfvars
+!terraform.tfvars.example
+.terraform/
+.terraform.lock.hcl
+
+# Packer sensitive variable files
+*.pkrvars.hcl
+!secrets.auto.pkrvars.hcl.example
+
+# Ansible secrets and cache
+*.pem
+*.key
+vault_pass
+.ansible/

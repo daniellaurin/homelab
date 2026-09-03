@@ -1,0 +1,24 @@
+[Unit]
+Description=qBittorrent (via Gluetun VPN)
+After=gluetun.service
+
+[Container]
+Image=lscr.io/linuxserver/qbittorrent:latest
+ContainerName=qbittorrent
+AutoUpdate=registry
+
+Network=container:gluetun
+
+Environment=PUID=1000
+Environment=PGID=1000
+Environment=TZ=America/Toronto
+Environment=WEBUI_PORT=8090
+
+Volume=/opt/appdata/qbittorrent:/config
+Volume=/data:/data
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
