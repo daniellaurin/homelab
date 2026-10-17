@@ -1,3 +1,0 @@
-- name: Execute Ansible fleet playbook
-        working-directory: ansible
-        run: ansible-playbook -i inventory/hosts.ini site.yml -e "pia_username=${{ secrets.PIA_USERNAME }} pia_password=${{ secrets.PIA_PASSWORD }}"
