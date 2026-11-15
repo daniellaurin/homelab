@@ -8,7 +8,7 @@
 ![MikroTik](https://img.shields.io/badge/MikroTik-293239?style=for-the-badge&logo=mikrotik&logoColor=white)
 
 <br>
-<img src="/img/logo.png" alt="Homelab Logo" width="200">
+<img src="/img/logos/logo.png" alt="Homelab Logo" width="200">
 <br>
 <br>
 <br>
