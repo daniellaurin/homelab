@@ -1,0 +1,7 @@
+---
+required_mounts:
+  - /opt/appdata
+expected_units:
+  - pihole.service
+  - unbound.service
+dns_test_domain: example.com

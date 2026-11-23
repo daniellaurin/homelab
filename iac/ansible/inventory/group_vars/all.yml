@@ -1,0 +1,3 @@
+---
+update_dry_run: false # true = report only, change nothing
+reboot_allowed: false # true = VMs reboot when a newer kernel is installed

@@ -1,0 +1,4 @@
+---
+pihole_peer: 10.0.30.9
+expected_units:
+  - pihole.service
